@@ -1,0 +1,98 @@
+// @use '@kmx/legos-button/dist/index.min';
+@use '../../styles/colors.scss' as *;
+@use '../../styles/sizes.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+a.sc--neo-button.kmx-button,
+button.sc--neo-button.kmx-button {
+    height: 3.5em;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 0 $size-s;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 auto;
+    width: calc(100% - $size-m * 2);
+    border: 1px solid;
+    transition: background-color 0.375s ease, color 0.125s ease;
+    font-family: var(--body-font);
+    line-height: 1.25;
+    text-align: center;
+
+    &.sc--neo-button--primary {
+        background-color: $yellow-400;
+        border-color: transparent;
+        color: $blue-900;
+
+        &:hover {
+            background-color: $yellow-600;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: none;
+            background-color: $yellow-600;
+        }
+    }
+
+    &.sc--neo-button--secondary {
+        background-color: transparent;
+        color: $blue-600;
+
+        &:hover {
+            background-color: $blue-600;
+            color: white;
+        }
+    }
+
+    &.sc--neo-button--tertiary {
+        background-color: transparent;
+        border-color: transparent;
+        color: $blue-600;
+        width: auto;
+
+        &:hover {
+            color: $blue-700;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: none;
+            color: $blue-700;
+        }
+    }
+
+    &.sc--neo-button--quaternary {
+        background-color: transparent;
+        border-color: transparent;
+        color: $blue-600;
+        font-weight: normal;
+        height: auto;
+        text-decoration: underline;
+        text-transform: none;
+    }
+
+    &:disabled {
+        background-color: $slate-100;
+        color: $slate-300;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0px 0px 0px 2px $blue-500;
+    }
+}

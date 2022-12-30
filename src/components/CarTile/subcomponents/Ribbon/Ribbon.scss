@@ -1,0 +1,35 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+
+.sc--ribbon.kmx-typography--body-1 {
+    color: $slate-900;
+    padding: $size-xs $size-s;
+    height: 24px;
+    margin-top: 0;
+    position: absolute;
+    top: $size-s;
+    right: $size-xs;
+    z-index: 2;
+    user-select: none;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    border: 1px solid $slate-200;
+
+    &.standard {
+        background-color: white;
+        border-radius: 2px;
+    }
+
+    &.checked {
+        background-color: $green-300;
+        border-radius: 34px;
+        svg {
+            margin-right: $size-xs;
+        }
+    }
+}

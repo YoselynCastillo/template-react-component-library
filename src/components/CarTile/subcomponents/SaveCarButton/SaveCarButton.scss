@@ -1,0 +1,59 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+@use '../../../../styles/mixins.scss' as *;
+
+.sc--save-car-button {
+    padding: 0;
+    width: 22px;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: $size-s;
+    left: $size-s;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    svg.sc--save-car-button--heart {
+        position: relative;
+        fill: white;
+        stroke: $blue-900;
+        transition: stroke 0.5s cubic-bezier(0.19, 1, 0.22, 1), stroke-width 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        stroke-width: 2px;
+        pointer-events: none;
+    }
+
+    &:hover {
+        svg.sc--save-car-button--heart {
+            stroke: $raspberry-600;
+        }
+    }
+
+    &.sc--save-car-button--saved {
+        svg.sc--save-car-button--heart {
+            fill: $raspberry-600;
+            stroke: transparent;
+        }
+
+        &:focus,
+        &:hover {
+            outline: 0;
+            svg.sc--save-car-button--heart {
+                fill: $raspberry-700;
+            }
+        }
+    }
+
+    &:not(.saved) {
+        &:focus {
+            outline: 0;
+
+            svg.sc--save-car-button--heart {
+                stroke: $raspberry-600;
+            }
+        }
+    }
+}

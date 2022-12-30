@@ -1,0 +1,17 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+@use '../../../../styles/mixins.scss' as *;
+
+
+p.sc--store-transfer-info.kmx-typography--fine-print {
+    margin-top: $size-s;
+    font-size: $size-sm;
+    line-height: 16px;
+
+    .sc--store-transfer-info--transfer {
+        display: block;
+        line-height: 1;
+        @include truncate();
+        color: $slate-700;
+    }
+}

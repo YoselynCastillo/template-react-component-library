@@ -1,0 +1,28 @@
+.sc--carousel-item {
+    display: inline-block;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-padding-left: 2px;
+    flex: 1 0 auto;
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        transition: opacity 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    &.sc--placeholder {
+        height: 100%;
+
+        img {
+            opacity: 0;
+        }
+    }
+}

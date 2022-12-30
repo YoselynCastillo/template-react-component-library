@@ -1,0 +1,49 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+@use '../../../../styles/mixins.scss' as *;
+
+.sc--carousel-item {
+    &.sc--badges {
+        padding-top: #{$car-tile-image-ratio-grid + 1%};
+        background-color: $blue-900;
+        position: relative;
+
+        &--wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $size-m;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            // @include mobile-fluid-prop(padding-top, s, l);
+            // @include mobile-fluid-prop(padding-bottom, s, l);
+        }
+
+        &--badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1 0 42%;
+
+            p {
+                margin: 0;
+                color: white;
+                white-space: normal;
+                line-height: 1.2;
+            }
+        }
+
+        svg {
+            fill: white;
+            width: 35px;
+            height: 35px; // for IE...
+        }
+    }
+}

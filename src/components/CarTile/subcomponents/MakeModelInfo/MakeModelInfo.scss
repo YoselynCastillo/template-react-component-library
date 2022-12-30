@@ -1,0 +1,54 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+@use '../../../../styles/mixins.scss' as *;
+
+.sc--tile-shell {
+    .sc--make-model-info.kmx-typography--body-2 {
+        color: $blue-700;
+        margin: 0 0 $size-s;
+        transition: none;
+        width: auto;
+        font-weight: 400;
+
+        a.make-model-link {
+            color: $blue-700;
+            &:focus-visible {
+                border: 1px solid $blue-600;
+                outline-color: $blue-600;
+            }
+            &:hover {
+                color: $blue-800;
+            }
+        }
+
+        // @include mobile-fluid-prop(margin-bottom, xs, s);
+
+        .sc--car-tile a:visited & {
+            color: $raspberry-800;
+        }
+
+        .sc--make-model-info--year-make,
+        .sc--make-model-info--model-trim {
+            display: block;
+            line-height: 1;
+            font-size: $size-m;
+            @include truncate();
+        }
+
+        .sc--make-model-info--model-trim {
+            margin-top: $size-xs;
+        }
+    }
+
+    &.viewed {
+        .sc--make-model-info.kmx-typography--body-2 {
+            a.make-model-link {
+                color: $raspberry-800;
+            }
+
+            a.make-model-link:hover {
+                color: $raspberry-1000;
+            }
+        }
+    }
+}

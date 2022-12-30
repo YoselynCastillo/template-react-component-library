@@ -1,0 +1,45 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+@use '../../../../styles/mixins.scss' as *;
+
+.sc--price-miles-info.kmx-typography--body-3 {
+    color: $slate-900;
+    line-height: 24px;
+    margin-bottom: $size-s;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    font-weight: 700;
+
+    // @include mobile-fluid-prop(margin-bottom, xs, s);
+
+    .sc--price-miles-info--price {
+        font-weight: 700;
+        &.sc--price-miles-info--new {
+            text-decoration: line-through;
+            color: $slate-700;
+            margin-right: 12px;
+        }
+    }
+
+    .sc--price-miles-info--divider {
+        background-color: $slate-200;
+        width: 1px;
+        height: 16px;
+        display: inline-block;
+        margin: auto 8px;
+        font-weight: 700;
+    }
+
+    .sc--price-miles-info--miles {
+        @include truncate();
+    }
+    .sc--price-miles-info--price,
+    .sc--price-miles-info--miles {
+        font-size: $size-ml;
+    }
+
+    .sc--price-miles-info--see-carmax-price.kmx-typography--headline-1 {
+        font-weight: 400;
+        @include truncate();
+    }
+}

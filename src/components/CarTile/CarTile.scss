@@ -1,0 +1,73 @@
+@use '../../styles/sizes.scss' as *;
+@use '../../styles/colors.scss' as *;
+
+.sc--tile-shell {
+  // border: 1px solid var(--slate-200);
+  box-shadow: inset 0 0 0 1px $slate-200;
+  border-radius: 8px;
+  position: relative;
+  transition: box-shadow 0.5s;
+  color: $slate-200; // fixes safari bug
+  // z-index: 1; // this helps a fun overflow bug in ios. it also prevents menus from above from showing above this element.
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px $slate-400;
+  }
+}
+
+.sc--car-tile {
+  display: block;
+  width: 100%;
+  position: relative;
+  text-align: left;
+  align-self: stretch;
+
+  &.disabled {
+    .sc--image-carousel,
+    .sc--store-transfer-info,
+    .sc--price-miles-info,
+    .sc--make-model-info {
+      opacity: 0.4;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &--images {
+    position: relative;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+
+    a:focus-visible {
+      outline: none;
+    }
+  }
+
+  &--content {
+    padding: $size-m;
+    padding-bottom: 12px;
+    position: relative;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    & > * {
+      margin: 0;
+    }
+
+    hr {
+      border: solid $slate-200;
+      border-width: 0 0 1px 0;
+      margin: $size-s auto;
+    }
+  }
+
+  &--extra-content {
+    display: none;
+  }
+}

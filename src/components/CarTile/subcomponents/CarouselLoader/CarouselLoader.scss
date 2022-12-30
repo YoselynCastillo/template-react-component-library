@@ -1,0 +1,39 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+@use '../../../../styles/mixins.scss' as *;
+
+.sc--carousel-item.sc--carousel-loader {
+    color: $slate-700;
+    padding-top: $car-tile-image-ratio-grid;
+    position: absolute;
+    z-index: -1;
+
+    .sc--carousel-loader--content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.sc--carousel-loader--has-error {
+        .sc--carousel-loader--content {
+            text-align: center;
+            padding: $size-m;
+            white-space: normal;
+            flex-direction: column;
+
+            & > * {
+                margin: 0;
+                line-height: 1.25;
+
+                &:first-child {
+                    margin-bottom: $size-s;
+                }
+            }
+        }
+    }
+}

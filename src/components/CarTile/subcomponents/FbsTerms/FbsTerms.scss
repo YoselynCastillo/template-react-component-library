@@ -1,0 +1,15 @@
+@use '../../../../styles/colors.scss' as *;
+@use '../../../../styles/sizes.scss' as *;
+
+.sc--fbs-terms {
+  color: $slate-900;
+  font-weight: 700;
+  min-height: 75px;
+  display: block;
+  position: relative;
+  &--bullet {
+    font-size: 12px;
+    margin: 0 $size-xs;
+    vertical-align: bottom;
+  }
+}

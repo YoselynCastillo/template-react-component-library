@@ -1,0 +1,19 @@
+@use '../../../../styles/sizes.scss' as *;
+
+.sc--image-carousel {
+    padding-top: $car-tile-image-ratio-grid;
+
+    &--viewer {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1; // this helps a fun overflow bug in ios
+        flex-wrap: wrap;
+        align-content: center;
+    }
+}
